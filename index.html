@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/WebSite">
+<html lang="en">
 <head>
     <meta name="google-site-verification" content="p84FehMSqLUWEkLBdBup6AfPuyZ-Ks5y3Grj3s-j0js" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ProSports Hub - Watch live cricket streaming of India vs Pakistan matches, IPL, PSL, World Cup & more on Star Sports HD, A Sports HD, Willow Cricket HD & PTV Sports.">
-    <meta name="keywords" content="live streaming cricket match, india vs pakistan, cricket live streaming free, ipl live streaming, psl live streaming, world cup cricket live, star sports live, a sports live, willow cricket live, ptv sports live, live cricket online">
-    <meta name="author" content="ProSports Hub">
-    <title>ProSports Hub - Live Cricket Streaming HD | India vs Pakistan | IPL, PSL, World Cup</title>
+    <title>ProSports Hub - Live Cricket Streaming</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -18,16 +15,17 @@
         }
 
         :root {
-            --primary: #ff6b35;
-            --secondary: #004e89;
-            --accent: #ff4757;
-            --dark: #1e272e;
-            --light: #f5f6fa;
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #333333;
+            --gray: #f5f5f5;
+            --dark-gray: #e0e0e0;
+            --light-gray: #f9f9f9;
         }
 
         body {
-            background: linear-gradient(135deg, var(--secondary), #1a3a5f);
-            color: var(--light);
+            background-color: var(--secondary);
+            color: var(--primary);
             min-height: 100vh;
             overflow-x: hidden;
             line-height: 1.6;
@@ -39,96 +37,48 @@
             padding: 20px;
         }
 
+        /* Header Styles */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--dark-gray);
             margin-bottom: 40px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            font-size: 28px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .logo-icon {
-            width: 50px;
+        .logo img {
             height: 50px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: auto;
         }
 
-        .logo-icon::before {
-            content: "PS";
-            color: white;
-            font-weight: 800;
-            font-size: 18px;
-        }
-
-        .logo-icon::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid white;
-            border-radius: 50%;
-            box-sizing: border-box;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 24px;
-            line-height: 1;
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo-tagline {
-            font-size: 12px;
-            letter-spacing: 2px;
-            color: var(--primary);
-            margin-top: 2px;
-        }
-
-        nav ul {
+        .desktop-nav ul {
             display: flex;
             list-style: none;
         }
 
-        nav ul li {
+        .desktop-nav ul li {
             margin-left: 25px;
         }
 
-        nav ul li a {
-            color: var(--light);
+        .desktop-nav ul li a {
+            color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
         }
 
-        nav ul li a:hover {
-            color: var(--primary);
+        .desktop-nav ul li a:hover {
+            color: var(--accent);
         }
 
-        nav ul li a::after {
+        .desktop-nav ul li a::after {
             content: '';
             position: absolute;
             width: 0;
@@ -139,48 +89,131 @@
             transition: width 0.3s;
         }
 
-        nav ul li a:hover::after {
+        .desktop-nav ul li a:hover::after {
             width: 100%;
         }
 
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--secondary);
+            z-index: 1000;
+            transition: right 0.4s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 80px 20px 20px;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav ul li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid var(--dark-gray);
+            transition: all 0.3s;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: var(--gray);
+            padding-left: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Hero Section */
         .hero {
             text-align: center;
             margin-bottom: 60px;
             animation: fadeIn 1s ease-out;
+            padding: 40px 0;
         }
 
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hero p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 30px;
-            color: #e0e0e0;
+            color: var(--accent);
         }
 
-        .live-indicator {
-            display: inline-flex;
-            align-items: center;
-            background: var(--accent);
-            padding: 8px 20px;
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 15px 40px;
             border-radius: 30px;
             font-weight: 600;
-            animation: pulse 2s infinite;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 18px;
         }
 
-        .live-indicator::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: var(--light);
-            border-radius: 50%;
-            margin-right: 8px;
+        .cta-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
+        /* Channels Section */
         .channels-section {
             margin-bottom: 60px;
         }
@@ -190,6 +223,8 @@
             margin-bottom: 30px;
             text-align: center;
             position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title::after {
@@ -201,7 +236,6 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 2px;
         }
 
         .channels-grid {
@@ -211,46 +245,24 @@
         }
 
         .channel-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: var(--light-gray);
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.4s, box-shadow 0.4s;
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             height: 350px;
-            cursor: pointer;
-            perspective: 1000px;
-        }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-
-        .channel-card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             padding: 20px;
+            text-align: center;
+            border: 1px solid var(--dark-gray);
         }
 
-        .card-back {
-            transform: rotateY(180deg);
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
+        .channel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .channel-logo {
@@ -261,30 +273,35 @@
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s;
+            background: var(--secondary);
+            overflow: hidden;
+            border: 1px solid var(--dark-gray);
         }
 
-        .channel-card:hover .channel-logo {
-            transform: scale(1.1);
+        .channel-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
         }
 
         .channel-name {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .channel-info {
             font-size: 14px;
-            color: #e0e0e0;
+            color: var(--accent);
             margin-bottom: 20px;
         }
 
         .watch-btn {
             background: var(--primary);
-            color: var(--light);
+            color: var(--secondary);
             border: none;
             padding: 12px 25px;
             border-radius: 30px;
@@ -295,6 +312,8 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .watch-btn i {
@@ -302,47 +321,62 @@
         }
 
         .watch-btn:hover {
-            background: #ff8c5a;
+            background: var(--accent);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .card-back h3 {
-            margin-bottom: 15px;
-            font-size: 22px;
+        /* SEO Content Section */
+        .seo-content {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid var(--dark-gray);
         }
 
-        .card-back p {
+        .seo-content h2 {
+            font-size: 28px;
             margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 1.6;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .schedule {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .match {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .match i {
-            margin-right: 8px;
+        .seo-content h3 {
+            font-size: 22px;
+            margin: 25px 0 15px;
             color: var(--primary);
         }
 
+        .seo-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--accent);
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .keyword-tag {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--dark-gray);
             margin-top: 40px;
-            color: #b0b0b0;
+            color: var(--accent);
         }
 
         .social-icons {
@@ -358,117 +392,17 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--light-gray);
             margin: 0 10px;
-            color: var(--light);
+            color: var(--primary);
             text-decoration: none;
             transition: all 0.3s;
         }
 
         .social-icons a:hover {
             background: var(--primary);
+            color: var(--secondary);
             transform: translateY(-5px);
-        }
-
-        /* SEO Content Section */
-        .seo-content {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        .seo-content h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .seo-content h3 {
-            font-size: 22px;
-            margin: 25px 0 15px;
-            color: var(--light);
-        }
-
-        .seo-content p {
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        .keyword-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .keyword-tag {
-            background: rgba(255, 107, 53, 0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            border: 1px solid rgba(255, 107, 53, 0.5);
-        }
-
-        /* Featured Match Section */
-        .featured-match {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 78, 137, 0.2));
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .teams {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .team-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-            font-size: 30px;
-        }
-
-        .team-name {
-            font-weight: 600;
-        }
-
-        .match-info {
-            text-align: center;
-        }
-
-        .match-info h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .match-time {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .vs {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
         }
 
         /* Animations */
@@ -477,55 +411,45 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(255, 71, 87, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
+            .desktop-nav {
+                display: none;
             }
-            
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
+
+            .mobile-menu-btn {
+                display: block;
             }
-            
-            nav ul li {
-                margin: 0 10px;
-            }
-            
+
             .hero h1 {
                 font-size: 36px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             .channels-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .seo-content {
                 padding: 20px;
             }
-            
-            .featured-match {
-                flex-direction: column;
-                gap: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
             }
-            
-            .teams {
-                order: 2;
+
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 16px;
             }
-            
-            .match-info {
-                order: 1;
+
+            .section-title {
+                font-size: 26px;
             }
         }
     </style>
@@ -534,13 +458,10 @@
     <div class="container">
         <header>
             <div class="logo">
-                <div class="logo-icon"></div>
-                <div class="logo-text">
-                    <a href="/" class="logo-main">PROSPORTS HUB</a>
-                    <div class="logo-tagline">LIVE STREAMING</div>
-                </div>
+                <!-- Replace with your logo.png -->
+                <img src="logo.png" alt="ProSports Hub Logo">
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/live-matches">Live Matches</a></li>
@@ -549,35 +470,31 @@
                     <li><a href="/news">News</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </header>
+
+        <!-- Mobile Navigation -->
+        <div class="overlay"></div>
+        <nav class="mobile-nav">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/live-matches">Live Matches</a></li>
+                <li><a href="/highlights">Highlights</a></li>
+                <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/news">News</a></li>
+            </ul>
+        </nav>
 
         <main>
             <section class="hero">
-                <h1>Live Cricket Streaming HD</h1>
+                <h1>Live Cricket Streaming</h1>
                 <p>Watch your favorite cricket matches live in high definition from the comfort of your home. Never miss a moment of the action!</p>
-                <div class="live-indicator">LIVE NOW</div>
-            </section>
-
-            <!-- Featured Match Section -->
-            <section class="featured-match">
-                <div class="teams">
-                    <div class="team">
-                        <div class="team-logo">🇮🇳</div>
-                        <div class="team-name">INDIA</div>
-                    </div>
-                    <div class="vs">VS</div>
-                    <div class="team">
-                        <div class="team-logo">🇵🇰</div>
-                        <div class="team-name">PAKISTAN</div>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <h3>ICC World Cup 2023</h3>
-                    <p class="match-time">Today, 7:30 PM IST</p>
-                    <a href="/india-vs-pakistan-live" class="watch-btn" style="margin-top: 15px;">
-                        <i class="fas fa-play"></i> Watch Live
-                    </a>
-                </div>
+                <a href="#" class="cta-btn">Start Live Streaming</a>
             </section>
 
             <section class="channels-section" aria-labelledby="featured-channels">
@@ -585,114 +502,54 @@
                 <div class="channels-grid">
                     <!-- Star Sports HD Card -->
                     <article class="channel-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="channel-logo" style="background: linear-gradient(135deg, #ff3838, #ff9f43);">
-                                    <i class="fas fa-satellite-dish" style="font-size: 50px; color: white;"></i>
-                                </div>
-                                <h3 class="channel-name">Star Sports HD</h3>
-                                <p class="channel-info">Premium Sports Channel</p>
-                                <a href="/star-sports-live" class="watch-btn">
-                                    <i class="fas fa-play"></i> Watch Now
-                                </a>
-                            </div>
-                            <div class="card-back">
-                                <h3>Star Sports HD</h3>
-                                <p>Broadcasting major cricket tournaments including IPL, ICC events, and bilateral series in stunning HD quality.</p>
-                                <div class="schedule">
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> India vs Australia - 7:30 PM
-                                    </div>
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> Pakistan vs England - 2:00 PM
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="channel-logo">
+                            <!-- Replace with your starsport.png -->
+                            <img src="starsport.png" alt="Star Sports HD">
                         </div>
+                        <h3 class="channel-name">Star Sports HD</h3>
+                        <p class="channel-info">Premium Sports Channel</p>
+                        <a href="#" class="watch-btn">
+                            <i class="fas fa-play"></i> Watch Live
+                        </a>
                     </article>
 
                     <!-- A Sports HD Card -->
                     <article class="channel-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="channel-logo" style="background: linear-gradient(135deg, #3498db, #2ecc71);">
-                                    <i class="fas fa-tv" style="font-size: 50px; color: white;"></i>
-                                </div>
-                                <h3 class="channel-name">A Sports HD</h3>
-                                <p class="channel-info">Pakistan's Premier Sports</p>
-                                <a href="/a-sports-live" class="watch-btn">
-                                    <i class="fas fa-play"></i> Watch Now
-                                </a>
-                            </div>
-                            <div class="card-back">
-                                <h3>A Sports HD</h3>
-                                <p>Pakistan's leading sports channel with exclusive coverage of PSL, domestic cricket, and international matches.</p>
-                                <div class="schedule">
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> PSL 2023 - 8:00 PM
-                                    </div>
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> Domestic Cup - 11:00 AM
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="channel-logo">
+                            <!-- Replace with your asport.png -->
+                            <img src="asport.png" alt="A Sports HD">
                         </div>
+                        <h3 class="channel-name">A Sports HD</h3>
+                        <p class="channel-info">Pakistan's Premier Sports</p>
+                        <a href="#" class="watch-btn">
+                            <i class="fas fa-play"></i> Watch Live
+                        </a>
                     </article>
 
                     <!-- Willow Cricket HD Card -->
                     <article class="channel-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="channel-logo" style="background: linear-gradient(135deg, #9b59b6, #3498db);">
-                                    <i class="fas fa-leaf" style="font-size: 50px; color: white;"></i>
-                                </div>
-                                <h3 class="channel-name">Willow Cricket HD</h3>
-                                <p class="channel-info">Cricket Specialist Channel</p>
-                                <a href="/willow-cricket-live" class="watch-btn">
-                                    <i class="fas fa-play"></i> Watch Now
-                                </a>
-                            </div>
-                            <div class="card-back">
-                                <h3>Willow Cricket HD</h3>
-                                <p>Dedicated cricket channel for fans in North America, featuring all major international cricket tournaments.</p>
-                                <div class="schedule">
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> ICC World Cup - 9:00 PM
-                                    </div>
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> The Ashes - 1:00 AM
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="channel-logo">
+                            <!-- Replace with your willow.png -->
+                            <img src="willow.png" alt="Willow Cricket HD">
                         </div>
+                        <h3 class="channel-name">Willow Cricket HD</h3>
+                        <p class="channel-info">Cricket Specialist Channel</p>
+                        <a href="#" class="watch-btn">
+                            <i class="fas fa-play"></i> Watch Live
+                        </a>
                     </article>
 
                     <!-- PTV Sports Card -->
                     <article class="channel-card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <div class="channel-logo" style="background: linear-gradient(135deg, #e74c3c, #e67e22);">
-                                    <i class="fas fa-broadcast-tower" style="font-size: 50px; color: white;"></i>
-                                </div>
-                                <h3 class="channel-name">PTV Sports</h3>
-                                <p class="channel-info">National Sports Channel</p>
-                                <a href="/ptv-sports-live" class="watch-btn">
-                                    <i class="fas fa-play"></i> Watch Now
-                                </a>
-                            </div>
-                            <div class="card-back">
-                                <h3>PTV Sports</h3>
-                                <p>Pakistan's national sports broadcaster, bringing free-to-air cricket coverage to millions of fans across the country.</p>
-                                <div class="schedule">
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> Pakistan Tour - 6:00 PM
-                                    </div>
-                                    <div class="match">
-                                        <i class="fas fa-circle"></i> National T20 - 3:00 PM
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="channel-logo">
+                            <!-- Replace with your ptv.png -->
+                            <img src="ptv.png" alt="PTV Sports">
                         </div>
+                        <h3 class="channel-name">PTV Sports</h3>
+                        <p class="channel-info">National Sports Channel</p>
+                        <a href="#" class="watch-btn">
+                            <i class="fas fa-play"></i> Watch Live
+                        </a>
                     </article>
                 </div>
             </section>
@@ -708,9 +565,6 @@
                 
                 <h3>Popular Cricket Streaming Channels</h3>
                 <p>Access live cricket from all major broadcasters including <strong>Star Sports HD</strong> for IPL and international matches, <strong>A Sports HD</strong> for PSL and Pakistan cricket, <strong>Willow Cricket HD</strong> for global coverage, and <strong>PTV Sports</strong> for free-to-air Pakistan matches.</p>
-                
-                <h3>Watch India vs Pakistan Live</h3>
-                <p>Don't miss the most anticipated cricket rivalry - <strong>India vs Pakistan live streaming</strong>. We provide multiple streaming options for this high-voltage encounter, ensuring you never miss a ball of this epic contest between arch-rivals.</p>
                 
                 <div class="keyword-list">
                     <span class="keyword-tag">live streaming cricket match</span>
@@ -739,8 +593,30 @@
     </div>
 
     <script>
-        // Add click animation to watch buttons
-        document.querySelectorAll('.watch-btn').forEach(button => {
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const closeBtn = document.querySelector('.close-btn');
+        const overlay = document.querySelector('.overlay');
+
+        function openMobileNav() {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileNav);
+        closeBtn.addEventListener('click', closeMobileNav);
+        overlay.addEventListener('click', closeMobileNav);
+
+        // Add click animation to buttons
+        document.querySelectorAll('.watch-btn, .cta-btn').forEach(button => {
             button.addEventListener('click', function(e) {
                 // Create ripple effect
                 const ripple = document.createElement('span');
@@ -766,7 +642,7 @@
         // Add style for ripple effect
         const style = document.createElement('style');
         style.textContent = `
-            .watch-btn {
+            .watch-btn, .cta-btn {
                 position: relative;
                 overflow: hidden;
             }
@@ -774,7 +650,7 @@
             .ripple {
                 position: absolute;
                 border-radius: 50%;
-                background: rgba(255, 255, 255, 0.7);
+                background: rgba(255, 255, 255, 0.5);
                 transform: scale(0);
                 animation: ripple-animation 0.6s linear;
             }
