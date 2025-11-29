@@ -4,11 +4,43 @@
     <script type='text/javascript' src='//pawsdefenseneigh.com/31/d6/27/31d627f041dbf79dd4b7bd1e1b4c1c5e.js'></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Sports Live - ProSports Hub</title>
+    <title>A Sports Live - ProSports Hub | Watch Live Cricket, Football, PSL Matches</title>
+    <meta name="description" content="Watch A Sports HD live streaming for free. ProSports Hub offers live cricket, PSL matches, football, and all sports events with high-quality streams.">
+    <meta name="keywords" content="prosports-hub, a sports live, live cricket, psl live, football streaming, sports channels, live matches">
+    <link rel="canonical" href="https://azharhussainq.github.io/ProSports-Hub/asport.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="A Sports Live - ProSports Hub">
+    <meta property="og:description" content="Watch A Sports HD live streaming for free. Live cricket, PSL matches, football and all sports events.">
+    <meta property="og:image" content="https://azharhussainq.github.io/ProSports-Hub/asport.png">
+    <meta property="og:url" content="https://azharhussainq.github.io/ProSports-Hub/asport.html">
+    <meta property="og:type" content="website">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": "A Sports HD Live Streaming",
+      "description": "Watch A Sports HD live streaming for free on ProSports Hub",
+      "url": "https://yourwebsite.com/asports-live.html",
+      "sport": "Cricket",
+      "broadcaster": {
+        "@type": "Organization",
+        "name": "A Sports"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
     
     <style>
         * {
@@ -265,6 +297,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .action-btn {
@@ -298,6 +331,47 @@
 
         .action-btn.secondary:hover {
             background: var(--dark-gray);
+        }
+
+        /* Volume Control */
+        .volume-control {
+            display: flex;
+            align-items: center;
+            background: var(--light-gray);
+            color: var(--primary);
+            border: 1px solid var(--dark-gray);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .volume-control:hover {
+            background: var(--dark-gray);
+        }
+
+        .volume-control i {
+            margin-right: 8px;
+        }
+
+        .volume-slider-container {
+            display: none;
+            align-items: center;
+            background: var(--light-gray);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 1px solid var(--dark-gray);
+            margin-top: 10px;
+        }
+
+        .volume-slider-container.active {
+            display: flex;
+        }
+
+        .volume-slider {
+            width: 150px;
+            margin: 0 10px;
         }
 
         /* Related Channels */
@@ -477,7 +551,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <a href="index.html">
+                <a href="index.html" aria-label="ProSports Hub Home">
                     <img src="logo.png" alt="ProSports Hub Logo">
                 </a>
             </div>
@@ -485,12 +559,12 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="index.html#featured-channels">Live Matches</a></li>
-                    <li><a href="index.html">Highlights</a></li>
-                    <li><a href="index.html">Schedule</a></li>
-                    <li><a href="index.html">News</a></li>
+                    <li><a href="highlights.html">Highlights</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="news.html">News</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Open Menu">
                 <i class="fas fa-bars"></i>
             </button>
         </header>
@@ -498,15 +572,15 @@
         <!-- Mobile Navigation -->
         <div class="overlay"></div>
         <nav class="mobile-nav">
-            <button class="close-btn">
+            <button class="close-btn" aria-label="Close Menu">
                 <i class="fas fa-times"></i>
             </button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#featured-channels">Live Matches</a></li>
-                <li><a href="index.html">Highlights</a></li>
-                <li><a href="index.html">Schedule</a></li>
-                <li><a href="index.html">News</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="news.html">News</a></li>
             </ul>
         </nav>
 
@@ -514,7 +588,7 @@
             <section class="stream-section">
                 <div class="stream-header">
                     <div class="channel-logo">
-                        <img src="asport.png" alt="A Sports HD">
+                        <img src="asport.png" alt="A Sports HD Logo">
                     </div>
                     <div class="channel-info">
                         <h1>A Sports HD <span class="live-indicator">LIVE</span></h1>
@@ -523,7 +597,7 @@
                 </div>
 
                 <div class="stream-container">
-                    <iframe src="//streamcrichd.com/update/asportshd.php" class="stream-iframe" allowfullscreen allow="encrypted-media"></iframe>
+                    <iframe src="//streamcrichd.com/update/asportshd.php" class="stream-iframe" allowfullscreen allow="encrypted-media" title="A Sports HD Live Stream"></iframe>
                     
                     <div class="stream-actions">
                         <a href="index.html" class="action-btn">
@@ -535,6 +609,15 @@
                         <button class="action-btn secondary" onclick="toggleFullscreen()">
                             <i class="fas fa-expand"></i> Fullscreen
                         </button>
+                        <button class="volume-control" onclick="toggleVolumeSlider()">
+                            <i class="fas fa-volume-up"></i> Volume Control
+                        </button>
+                    </div>
+                    
+                    <div class="volume-slider-container" id="volumeSlider">
+                        <i class="fas fa-volume-mute"></i>
+                        <input type="range" min="0" max="100" value="50" class="volume-slider" id="volumeControl">
+                        <i class="fas fa-volume-up"></i>
                     </div>
                 </div>
             </section>
@@ -544,7 +627,7 @@
                 <div class="channels-grid">
                     <a href="starsport.html" class="channel-card">
                         <div class="channel-logo">
-                            <img src="starsport.png" alt="Star Sports HD">
+                            <img src="starsport.png" alt="Star Sports HD Logo">
                         </div>
                         <h3>Star Sports HD</h3>
                         <p>Premium Sports Channel</p>
@@ -553,7 +636,7 @@
 
                     <a href="willow.html" class="channel-card">
                         <div class="channel-logo">
-                            <img src="willow.png" alt="Willow Cricket HD">
+                            <img src="willow.png" alt="Willow Cricket HD Logo">
                         </div>
                         <h3>Willow Cricket HD</h3>
                         <p>Cricket Specialist Channel</p>
@@ -562,7 +645,7 @@
 
                     <a href="ptv.html" class="channel-card">
                         <div class="channel-logo">
-                            <img src="ptv.png" alt="PTV Sports">
+                            <img src="ptv.png" alt="PTV Sports Logo">
                         </div>
                         <h3>PTV Sports</h3>
                         <p>National Sports Channel</p>
@@ -627,8 +710,25 @@
             }
         }
 
+        // Volume Control Functions
+        function toggleVolumeSlider() {
+            const volumeSlider = document.getElementById('volumeSlider');
+            volumeSlider.classList.toggle('active');
+        }
+
+        // Note: Direct volume control for iframe content is not possible due to browser security
+        // This is a visual control that users can use as reference
+        document.getElementById('volumeControl').addEventListener('input', function() {
+            // In a real implementation, you would control the volume of the video player
+            // Since we can't control the iframe content directly, this is a visual indicator
+            console.log('Volume set to: ' + this.value + '%');
+            
+            // You could implement a custom player or find a stream source that allows volume control
+            // For now, this serves as a user interface element
+        });
+
         // Add click animation to buttons
-        document.querySelectorAll('.action-btn, .watch-btn').forEach(button => {
+        document.querySelectorAll('.action-btn, .watch-btn, .volume-control').forEach(button => {
             button.addEventListener('click', function(e) {
                 // Create ripple effect
                 const ripple = document.createElement('span');
@@ -654,7 +754,7 @@
         // Add style for ripple effect
         const style = document.createElement('style');
         style.textContent = `
-            .action-btn, .watch-btn {
+            .action-btn, .watch-btn, .volume-control {
                 position: relative;
                 overflow: hidden;
             }
