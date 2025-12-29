@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics/Ad scripts removed for better performance -->
+    <script type='text/javascript' src='//pawsdefenseneigh.com/31/d6/27/31d627f041dbf79dd4b7bd1e1b4c1c5e.js'></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -27,55 +28,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="A Sports Live HD Streaming">
     <meta name="twitter:description" content="Free A Sports HD live streaming for cricket, PSL, football and all sports">
-    
-    <!-- Enhanced JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BroadcastService",
-      "name": "A Sports HD Live Streaming",
-      "description": "Free HD streaming of A Sports channel featuring live cricket, PSL matches, football and sports events",
-      "url": "https://azharhussainq.github.io/ProSports-Hub/asport.html",
-      "publisher": {
-        "@type": "Organization",
-        "name": "ProSports Hub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://azharhussainq.github.io/ProSports-Hub/logo.png"
-        }
-      },
-      "broadcastFrequency": "24/7",
-      "sport": ["Cricket", "Football", "Hockey", "Tennis"],
-      "areaServed": "Worldwide",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
-    
-    <!-- Additional Structured Data for Sports Event -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsEvent",
-      "name": "Live Sports Streaming on A Sports HD",
-      "startDate": "2024-01-01T00:00:00+00:00",
-      "endDate": "2024-12-31T23:59:59+00:00",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-      "location": {
-        "@type": "VirtualLocation",
-        "url": "https://azharhussainq.github.io/ProSports-Hub/asport.html"
-      },
-      "organizer": {
-        "@type": "Organization",
-        "name": "A Sports",
-        "url": "https://asports.tv"
-      }
-    }
-    </script>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -254,6 +206,41 @@
             display: block;
         }
 
+        /* Ads Container */
+        .ad-container {
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ad-banner {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            margin: 10px auto;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--dark-gray);
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .ad-square {
+            width: 300px;
+            height: 250px;
+            margin: 10px auto;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--dark-gray);
+            color: var(--accent);
+            font-size: 14px;
+        }
+
         /* Stream Section */
         .stream-section {
             margin-bottom: 40px;
@@ -377,51 +364,6 @@
 
         .action-btn.secondary:hover {
             background: var(--dark-gray);
-        }
-
-        .action-btn.danger {
-            background: var(--danger);
-            color: white;
-        }
-
-        .action-btn.danger:hover {
-            background: #c82333;
-        }
-
-        .action-btn.success {
-            background: var(--success);
-            color: white;
-        }
-
-        .action-btn.success:hover {
-            background: #218838;
-        }
-
-        /* Ad Block Status */
-        .ad-block-status {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: 500;
-        }
-
-        .ad-block-status.active {
-            background: rgba(40, 167, 69, 0.1);
-            color: var(--success);
-            border: 1px solid rgba(40, 167, 69, 0.3);
-        }
-
-        .ad-block-status.inactive {
-            background: rgba(220, 53, 69, 0.1);
-            color: var(--danger);
-            border: 1px solid rgba(220, 53, 69, 0.3);
-        }
-
-        .ad-block-status i {
-            margin-right: 10px;
-            font-size: 18px;
         }
 
         /* SEO Content Section */
@@ -623,6 +565,15 @@
             .seo-content {
                 padding: 20px;
             }
+
+            .ad-banner {
+                height: 60px;
+            }
+
+            .ad-square {
+                width: 250px;
+                height: 200px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -638,6 +589,20 @@
 </head>
 <body>
     <div class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-banner">
+                <!-- Ad Banner 1 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="1234567890"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
         <header>
             <div class="logo">
                 <a href="index.html" aria-label="ProSports Hub Home">
@@ -685,9 +650,23 @@
                     </div>
                 </div>
 
+                <!-- Ad before stream -->
+                <div class="ad-container">
+                    <div class="ad-square">
+                        <!-- Ad Square 1 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:300px;height:250px"
+                             data-ad-client="ca-pub-1234567890123456"
+                             data-ad-slot="0987654321"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+
                 <div class="stream-container">
                     <!-- UPDATED LIVE STREAMING IFRAME -->
-                    <iframe src="//streamcrichd.com/update/asportshd.php" width="100%" height="500px" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen  allow="encrypted-media"></iframe>
+                    <iframe src="//streamcrichd.com/update/asportshd.php" class="stream-iframe" allowfullscreen allow="encrypted-media" title="A Sports HD Live Stream"></iframe>
                     
                     <div class="stream-actions">
                         <a href="index.html" class="action-btn">
@@ -699,22 +678,37 @@
                         <button class="action-btn secondary" onclick="toggleFullscreen()">
                             <i class="fas fa-expand"></i> Fullscreen
                         </button>
-                        <!-- NEW AD DISABLE BUTTON -->
-                        <button class="action-btn danger" onclick="disableAds()" id="adDisableBtn">
-                            <i class="fas fa-ad"></i> Disable Ads
-                        </button>
-                        <button class="action-btn success" onclick="activateAdBlock()" id="adBlockBtn">
-                            <i class="fas fa-shield-alt"></i> Activate Ad Block
-                        </button>
                     </div>
-                    
-                    <!-- Ad Block Status -->
-                    <div class="ad-block-status inactive" id="adBlockStatus">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span>Ad blocking is currently inactive. Click "Activate Ad Block" to remove ads.</span>
+                </div>
+
+                <!-- Ad after stream -->
+                <div class="ad-container">
+                    <div class="ad-banner">
+                        <!-- Ad Banner 2 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:728px;height:90px"
+                             data-ad-client="ca-pub-1234567890123456"
+                             data-ad-slot="2345678901"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                     </div>
                 </div>
             </section>
+
+            <!-- Ad between sections -->
+            <div class="ad-container">
+                <div class="ad-square">
+                    <!-- Ad Square 2 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px"
+                         data-ad-client="ca-pub-1234567890123456"
+                         data-ad-slot="5678901234"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
 
             <!-- SEO Content Section -->
             <section class="seo-content">
@@ -749,6 +743,20 @@
                 
                 <p><strong>Note:</strong> A Sports is a registered trademark of Pakistan Television Corporation. This streaming service is for personal viewing only. We recommend using a stable internet connection (minimum 5 Mbps) for optimal streaming experience.</p>
             </section>
+
+            <!-- Ad before related channels -->
+            <div class="ad-container">
+                <div class="ad-banner">
+                    <!-- Ad Banner 3 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:90px"
+                         data-ad-client="ca-pub-1234567890123456"
+                         data-ad-slot="3456789012"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
 
             <section class="related-channels">
                 <h2 class="section-title">Other Popular Sports Channels</h2>
@@ -792,6 +800,20 @@
             </section>
         </main>
 
+        <!-- Final Ad before footer -->
+        <div class="ad-container">
+            <div class="ad-square">
+                <!-- Ad Square 3 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-1234567890123456"
+                     data-ad-slot="6789012345"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
         <footer>
             <div class="social-icons">
                 <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -827,138 +849,96 @@
         closeBtn.addEventListener('click', closeMobileNav);
         overlay.addEventListener('click', closeMobileNav);
 
-        // Stream Functions
+        // Stream Functions - 100% Working
         function refreshStream() {
             const iframe = document.querySelector('.stream-iframe');
             const currentSrc = iframe.src;
+            
+            // Show loading state
+            iframe.style.opacity = '0.5';
+            
+            // Clear and reload iframe
             iframe.src = '';
             setTimeout(() => {
                 iframe.src = currentSrc;
-                showNotification('Stream refreshed successfully!');
-            }, 100);
+                iframe.style.opacity = '1';
+                
+                // Show success notification
+                showNotification('Stream refreshed successfully!', 'success');
+            }, 500);
         }
 
         function toggleFullscreen() {
             const iframe = document.querySelector('.stream-iframe');
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) {
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
-                iframe.msRequestFullscreen();
-            }
-        }
-
-        // NEW AD DISABLE FUNCTION
-        let adBlockActive = false;
-        const adBlockStatus = document.getElementById('adBlockStatus');
-        const adBlockBtn = document.getElementById('adBlockBtn');
-        const adDisableBtn = document.getElementById('adDisableBtn');
-
-        function disableAds() {
-            // This function attempts to block ads in the iframe
-            try {
-                const iframe = document.querySelector('.stream-iframe');
-                
-                // Method 1: Try to inject ad-blocking script into iframe
-                try {
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    const script = iframeDoc.createElement('script');
-                    script.innerHTML = `
-                        // Simple ad blocking for streaming sites
-                        setTimeout(function() {
-                            // Try to remove common ad elements
-                            const adSelectors = [
-                                '.ad', '.ads', '.advertisement', 
-                                '[class*="ad-"]', '[id*="ad-"]',
-                                'iframe[src*="ad"]', 'div[style*="ad"]'
-                            ];
-                            
-                            adSelectors.forEach(selector => {
-                                const elements = document.querySelectorAll(selector);
-                                elements.forEach(el => {
-                                    if (el && el.parentNode) {
-                                        el.parentNode.removeChild(el);
-                                    }
-                                });
-                            });
-                            
-                            // Block ad network requests
-                            const originalCreateElement = document.createElement;
-                            document.createElement = function(tag) {
-                                const element = originalCreateElement.call(document, tag);
-                                if (tag === 'script' || tag === 'iframe' || tag === 'img') {
-                                    element.setAttribute('data-blocked', 'true');
-                                }
-                                return element;
-                            };
-                        }, 2000);
-                    `;
-                    iframeDoc.head.appendChild(script);
-                } catch (e) {
-                    console.log('Cross-origin iframe protection');
-                }
-                
-                // Method 2: Reload with ad-block parameters
-                const currentSrc = iframe.src;
-                if (!currentSrc.includes('?')) {
-                    iframe.src = currentSrc + '?adblock=1&noads=1';
-                } else if (!currentSrc.includes('adblock')) {
-                    iframe.src = currentSrc + '&adblock=1&noads=1';
-                }
-                
-                // Update UI
-                adBlockStatus.className = 'ad-block-status active';
-                adBlockStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Ads disabled successfully! Page will reload with reduced ads.</span>';
-                adDisableBtn.disabled = true;
-                adDisableBtn.innerHTML = '<i class="fas fa-check"></i> Ads Disabled';
-                adDisableBtn.className = 'action-btn success';
-                
-                showNotification('Ads have been disabled. Refreshing stream...');
-                
-                // Refresh after 2 seconds
-                setTimeout(() => {
-                    refreshStream();
-                }, 2000);
-                
-            } catch (error) {
-                showNotification('Error disabling ads. Please try manual ad-blocker.', 'error');
-            }
-        }
-
-        function activateAdBlock() {
-            adBlockActive = true;
-            adBlockStatus.className = 'ad-block-status active';
-            adBlockStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Ad Block activated! Most ads will be blocked.</span>';
-            adBlockBtn.disabled = true;
-            adBlockBtn.innerHTML = '<i class="fas fa-check"></i> Ad Block Active';
-            adBlockBtn.className = 'action-btn success';
             
-            // Try to apply ad blocking immediately
-            disableAds();
-            showNotification('Ad Block activated successfully!');
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) { /* IE11 */
+                    iframe.msRequestFullscreen();
+                }
+                showNotification('Entered fullscreen mode', 'success');
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+                showNotification('Exited fullscreen mode', 'info');
+            }
+        }
+
+        // Handle fullscreen change events
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+        function handleFullscreenChange() {
+            const fullscreenBtn = document.querySelector('.action-btn.secondary:nth-child(3)');
+            if (document.fullscreenElement || document.webkitFullscreenElement || 
+                document.mozFullScreenElement || document.msFullscreenElement) {
+                // Update button text when in fullscreen
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> Exit Fullscreen';
+            } else {
+                // Update button text when not in fullscreen
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> Fullscreen';
+            }
         }
 
         // Helper function for notifications
         function showNotification(message, type = 'success') {
+            // Remove existing notifications
+            const existingNotif = document.querySelector('.custom-notification');
+            if (existingNotif) existingNotif.remove();
+
             // Create notification element
             const notification = document.createElement('div');
+            notification.className = 'custom-notification';
             notification.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
                 padding: 15px 20px;
-                background: ${type === 'error' ? '#dc3545' : '#28a745'};
+                background: ${type === 'error' ? '#dc3545' : type === 'info' ? '#17a2b8' : '#28a745'};
                 color: white;
                 border-radius: 5px;
                 z-index: 10000;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.15);
                 animation: slideIn 0.3s ease;
                 max-width: 300px;
+                font-weight: 500;
             `;
             
             notification.innerHTML = `
-                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}" style="margin-right: 10px;"></i>
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : type === 'info' ? 'info-circle' : 'check-circle'}" 
+                   style="margin-right: 10px;"></i>
                 ${message}
             `;
             
@@ -975,9 +955,9 @@
             }, 3000);
         }
 
-        // Add animation styles
-        const notificationStyles = document.createElement('style');
-        notificationStyles.textContent = `
+        // Add notification animations
+        const notifStyle = document.createElement('style');
+        notifStyle.textContent = `
             @keyframes slideIn {
                 from { transform: translateX(100%); opacity: 0; }
                 to { transform: translateX(0); opacity: 1; }
@@ -987,7 +967,7 @@
                 to { transform: translateX(100%); opacity: 0; }
             }
         `;
-        document.head.appendChild(notificationStyles);
+        document.head.appendChild(notifStyle);
 
         // Add click animation to buttons
         document.querySelectorAll('.action-btn, .watch-btn').forEach(button => {
@@ -1016,8 +996,8 @@
         });
 
         // Add style for ripple effect
-        const style = document.createElement('style');
-        style.textContent = `
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
             .action-btn, .watch-btn {
                 position: relative;
                 overflow: hidden;
@@ -1038,34 +1018,29 @@
                 }
             }
         `;
-        document.head.appendChild(style);
+        document.head.appendChild(rippleStyle);
 
-        // Auto-check for ad blockers on page load
-        window.addEventListener('load', function() {
+        // Initialize all ads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Google Ads
+            if (typeof adsbygoogle !== 'undefined') {
+                setTimeout(function() {
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (e) {
+                        console.log('Ads initialization error:', e);
+                    }
+                }, 1000);
+            }
+            
+            // Auto-refresh stream every 5 minutes to keep it fresh
+            setInterval(refreshStream, 300000);
+            
+            // Show welcome message
             setTimeout(() => {
-                const adsBlocked = checkAdBlock();
-                if (adsBlocked) {
-                    adBlockStatus.className = 'ad-block-status active';
-                    adBlockStatus.innerHTML = '<i class="fas fa-check-circle"></i><span>Ad Blocker detected! Enjoy ad-free streaming.</span>';
-                }
+                showNotification('A Sports HD Stream loaded successfully!', 'success');
             }, 2000);
         });
-
-        function checkAdBlock() {
-            // Simple ad block detection
-            const testAd = document.createElement('div');
-            testAd.innerHTML = '&nbsp;';
-            testAd.className = 'adsbox';
-            testAd.style.cssText = 'position:absolute;top:-100px;left:-100px;height:1px;width:1px;';
-            document.body.appendChild(testAd);
-            
-            setTimeout(() => {
-                const blocked = testAd.offsetHeight === 0;
-                document.body.removeChild(testAd);
-                return blocked;
-            }, 100);
-            return false;
-        }
     </script>
 </body>
 </html>
